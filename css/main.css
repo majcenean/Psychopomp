@@ -1,0 +1,1293 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web&display=swap');
+
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before;
+*:after;
+
+    {
+    box-sizing: inherit;
+}
+
+/*GENERAL STYLES*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: rgb(16, 0, 86);
+    color: white;
+    font-family: 'Titillium Web', sans-serif;
+    overflow: hidden;
+    -webkit-user-select: none;
+    /* Chrome all / Safari all */
+    -moz-user-select: none;
+    /* Firefox all */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+    /* Likely future */
+/*    cursor: url('../img/cursor_lantern.png'), auto;*/
+    cursor: crosshair;
+}
+
+canvas {
+    display: block;
+}
+
+::selection {
+    background-color: #E3AFB0;
+    color: #470240;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    color: white;
+    text-align: center;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+h1 {
+    font-size: 20px;
+}
+
+h2 {
+    font-size: 17px;
+}
+
+p {
+    font-size: 15px;
+}
+
+a {
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+a:hover {
+    text-shadow: 0px 0px 5px white;
+}
+
+.side {
+    position: absolute;
+    width: 40%;
+    height: 110%;
+    background-color: rgb(227, 20, 94);
+    left: 0%;
+    top: -5%;
+    bottom: 0%;
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+}
+
+.side p {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    text-align: justify;
+    top: -11%;
+}
+
+.side img {
+    position: relative;
+    left: 15%;
+    width: 70%;
+    top: -8%;
+}
+
+.keyword {
+    text-decoration: underline;
+
+}
+
+.side a {
+    color: white;
+    z-index: 10;
+    font-size: 1.5em;
+    margin-top: -2em;
+    text-align: center;
+    border: 4px white dotted;
+    width: 30%;
+    position: relative;
+    left: 35%;
+    animation: dots_ebb 2.5s ease-in-out infinite alternate;
+    border-radius: 15px;
+}
+
+.side a:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+@keyframes dots_ebb {
+    to {
+        transform: translateY(0px);
+        border: 3.5px white dotted;
+    }
+
+    from {
+        transform: translateY(10px);
+        border: 5px white dotted;
+    }
+}
+
+.key_controls {
+    background-image: url(../img/keys.svg);
+    background-position: 0px 0px;
+    background-size: 100%;
+    width: 213px;
+    height: 156px;
+    background-repeat: no-repeat;
+    animation: key_press 2s steps(2) infinite;
+    margin-top: -15%;
+    margin-bottom: 15%;
+    position: relative;
+    left: 33.5%;
+}
+
+@keyframes key_press {
+    0% {
+        background-image: url(../img/keys.svg);
+        background-position: 0px 0px;
+    }
+
+    100% {
+        background-image: url(../img/keys.svg);
+        background-position: 0px -313px;
+    }
+}
+
+
+/*INDEX PAGE DECORATION*/
+
+/* CODE CITATION:
+TITLE: Wave effect in css - Tutorial
+AUTHOR: The Alien Brains [YouTube Channel]
+DATE OF PUBLISHING: March 26, 2018
+DATE ACCESSED: February 2, 2020
+URL: https://www.youtube.com/watch?v=cTsbzlSU88g
+*/
+
+.wave_1 {
+    position: absolute;
+    top: -20%;
+    bottom: 0%;
+    right: -285px;
+    width: 300px;
+    height: 200%;
+    background-image: url(../img/wave.svg);
+    background-position: 0 bottom;
+    background-repeat: repeat-y;
+    transform-origin: center bottom;
+    opacity: 1;
+    z-index: 2;
+    background-blend-mode: color-burn;
+    animation: ebb_1 2s ease-in-out infinite alternate;
+}
+
+.wave_2 {
+    position: absolute;
+    top: -20%;
+    bottom: 0%;
+    right: -285px;
+    width: 300px;
+    height: 200%;
+    background-image: url(../img/wave.svg);
+    background-position: 0 bottom;
+    background-repeat: repeat-y;
+    transform-origin: center bottom;
+    opacity: 0.5;
+    z-index: 1;
+    background-blend-mode: color-burn;
+    animation: ebb_1 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes ebb_1 {
+    to {
+        transform: translateY(0%);
+    }
+
+    from {
+        transform: translateY(10%);
+    }
+}
+
+@keyframes ebb_2 {
+    to {
+        transform: translateY(0%);
+    }
+
+    from {
+        transform: translateY(-15%);
+    }
+}
+
+.sand_1 {
+    position: absolute;
+    top: -10%;
+    bottom: 0%;
+    left: 30.4%;
+    width: 65%;
+    height: 120%;
+    background-image: url(../img/sand.svg);
+    background-position: 0 top;
+    background-repeat: repeat-y;
+    transform-origin: center bottom;
+    z-index: -5;
+    animation: woosh_1 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes woosh_1 {
+    0% {
+        transform: translateY(0.5%);
+        opacity: 0.6;
+    }
+
+    100% {
+        transform: translateY(-0.5%);
+        opacity: 0.5;
+    }
+}
+
+.sand_2 {
+    position: absolute;
+    top: -10%;
+    bottom: 0%;
+    left: 30%;
+    width: 65%;
+    height: 120%;
+    background-image: url(../img/sand.svg);
+    background-position: 0 top;
+    background-repeat: repeat-y;
+    transform-origin: center bottom;
+    z-index: -5;
+    animation: woosh_2 3s ease-in-out infinite alternate;
+}
+
+@keyframes woosh_2 {
+    0% {
+        transform: translateY(0.5%);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-0.5%);
+        opacity: 0.5;
+    }
+}
+
+.boat {
+    position: absolute;
+    bottom: 5%;
+    left: 24%;
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation: rock 2.5s ease-in-out infinite alternate;
+}
+
+.boat img {
+    width: 210%;
+    height: auto;
+}
+
+@keyframes rock {
+    0% {
+        transform-origin: 100% 100%;
+        transform: rotate(1deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform-origin: 500% 0%;
+        transform: rotate(-1deg);
+        opacity: 0.8;
+    }
+}
+
+.ferryman {
+    position: absolute;
+    bottom: 15%;
+    right: 15%;
+    width: 100px;
+    height: 126px;
+    background-image: url(../img/ferryman/ferryman_lantern.gif);
+    background-size: 100px 126px;
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation: gimme_a_light 2.5s ease 2s 1 normal backwards;
+}
+
+@keyframes gimme_a_light {
+    0% {
+        background-image: url(../img/ferryman/ferryman_walk_1.png);
+        transform: translate(0px 0px);
+    }
+
+    30% {
+        background-image: url(../img/ferryman/ferryman_lantern_1.png);
+        transform: translate(2px 1px);
+    }
+
+    40% {
+        background-image: url(../img/ferryman/ferryman_lantern_2.png);
+        transform: translate(0px 0px);
+    }
+
+    50% {
+        background-image: url(../img/ferryman/ferryman_lantern_3.png);
+    }
+
+    70% {
+        background-image: url(../img/ferryman/ferryman_lantern.gif);
+    }
+}
+
+
+/*ABOUT PAGE*/
+
+.about {
+    position: relative;
+    top: 5%;
+    left: 25%;
+    width: 50%;
+    border-radius: 25px;
+    transition: 0.5s;
+    animation: glow 1s ease-in-out infinite alternate;
+    border: 4px white dotted;
+    margin-top: 75px;
+}
+
+.about h1,
+.about p {
+    padding: 5px;
+    width: 70%;
+    position: relative;
+    left: 15%;
+}
+
+.about h1 {
+    padding-bottom: 5px;
+}
+
+.about p {
+    text-align: justify;
+}
+
+.letter_key {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.credits {
+    position: relative;
+    left: 25%;
+    width: 50%;
+    border-radius: 25px;
+    transition: 0.5s;
+    animation: glow 1s ease-in-out infinite alternate;
+    overflow: hidden;
+    margin-top: 75px;
+}
+
+.credits h1,
+.credits h2,
+.credits h3,
+.credits li,
+.credits p {
+    padding: 0px;
+    position: relative;
+    left: 20%;
+    width: 60%;
+}
+
+.credits p {
+    text-align: justify;
+}
+
+/*
+.credits_content {
+    animation: roll 55s linear infinite normal;
+}
+*/
+
+.credits h1,
+.credits h2 {
+    padding-bottom: 5px;
+}
+
+.credits h2,
+.credits h3,
+.credits li {
+    text-align: left;
+    transition: 0.5s;
+}
+
+.credits h3 {
+    font-size: 13px;
+}
+
+.credits li {
+    font-size: 12px;
+    text-align: justify;
+}
+
+.credits:hover h2 {
+    text-shadow: 0px 0px 10px white;
+}
+
+.credits a {
+    color: white;
+    text-shadow: 0px 0px 20px white;
+}
+
+@keyframes glow {
+    from {
+        box-shadow: 0px 0px 10px white;
+        border: 3.5px white dotted;
+    }
+
+    to {
+        box-shadow: 0px 0px 20px white;
+        border: 5px white dotted;
+    }
+}
+
+@keyframes roll {
+    from {
+        transform: translateY(130%);
+    }
+
+    to {
+        transform: translateY(-130%);
+    }
+}
+
+.credits .credits_content table {
+    position: relative;
+    left: 20%;
+    width: 60%;
+    transition: 0.5s;
+}
+
+.credits .credits_content table tr th img {
+    width: 100%;
+    vertical-align: center;
+    opacity: 0.8;
+    border-radius: 10px;
+    transition: 0.5s;
+}
+
+.credits:hover .credits_content table {
+    left: 5%;
+    width: 90%;
+}
+
+.credits:hover .credits_content table tr th p {
+    font-size: 1em;
+}
+
+.credits:hover .credits_content table tr th img {
+    box-shadow: 0px 0px 10px white;
+    border-radius: 20px;
+    opacity: 1;
+    width: 100%;
+}
+
+.credits .credits_content table tr th {
+    width: 30%;
+    vertical-align: text-top;
+}
+
+.credits .credits_content table tr th p {
+    font-size: 9px;
+    text-align: left;
+    position: relative;
+    left: 10%;
+    width: 90%;
+}
+
+
+/*PAGE NAVIGATION BUTTONS*/
+
+.next {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 4.5px dotted white;
+    border-radius: 50%;
+    bottom: 10%;
+    right: 7%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    transition: 0.5s;
+    animation: arrowbob 1s ease-in-out infinite alternate;
+}
+
+.next p {
+    font-size: 55px;
+}
+
+.next:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+
+@keyframes arrowbob {
+    to {
+        transform: translateY(0px);
+    }
+
+    from {
+        transform: translateY(20px);
+    }
+}
+
+.back {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 4.5px dotted white;
+    border-radius: 50%;
+    bottom: 10%;
+    left: 7%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    transition: 0.5s;
+    animation: arrowbob 1s ease-in-out infinite alternate;
+}
+
+.back p {
+    font-size: 55px;
+}
+
+.back:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+
+
+/*p5 SKETCHES*/
+
+iframe {
+    display: block;
+    margin: auto;
+    border: none;
+    border-radius: 0px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+/*extra scenes*/
+
+/*door*/
+.door {
+    background-image: url(../img/door1.svg);
+    background-position: 0px 0px;
+    background-size: 100%;
+    width: 500px;
+    height: 690px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 8%;
+    right: 15%;
+    opacity: 0.4;
+    transition: 0.3s;
+    z-index: 5;
+    animation: ethereal 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes ethereal {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    70% {
+        opacity: 0.55;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.door:hover {
+    background-image: url(../img/door2.svg);
+    opacity: 0.9;
+}
+
+/*dialogue*/
+
+.dialogue {
+    width: 500px;
+    height: auto;
+    max-width: 500px;
+    max-height: 300px;
+    border: 3px dotted white;
+    border-radius: 30px;
+    animation: glow 1s ease-in-out infinite alternate;
+    position: absolute;
+    left: 15%;
+    bottom: 30%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #100056;
+    opacity: 0.8;
+    transition: 0.2s;
+}
+
+.dialogue:hover {
+    opacity: 0.9;
+}
+
+.dialogue p,
+.dialogue h1 {
+    padding: 0px 20px 0px 20px;
+    margin-top: 15px;
+    margin-bottom: 20px;
+    font-size: 22px;
+    text-align: left;
+}
+
+.dialogue h1 {
+    font-size: 15px;
+    text-transform: uppercase;
+    text-align: center;
+    border-radius: 25px;
+    padding: 8px 20px 8px 20px;
+    margin: 10px 25px 10px 25px;
+    background-color: #26099F;
+    background-size: 200%;
+    background-image: linear-gradient(#26099F 0%, #100056 45%, #26099F 100%);
+    transition: 0.35s;
+    opacity: 0.9;
+}
+
+.dialogue h1:hover {
+    font-size: 16px;
+    border-radius: 30px;
+    background-image: linear-gradient(#26099F 0%, #100056 50%, #26099F 100%);
+    color: #E3145E;
+    padding: 10px 25px 10px 25px;
+    text-shadow: 0px 0px 15px #26099F;
+    opacity: 1;
+}
+
+/*cool scrollbar*/
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+    z-index: 10;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #100056;
+    border-radius: 5px;
+    opacity: 0;
+}
+
+::-webkit-scrollbar-track:hover {
+    background: #26099F;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #E3145E;
+    border-radius: 5px;
+    transition: 0.5s;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #E3AFB0;
+    transition: 0.5s;
+}
+
+/*door sand*/
+.sand_bottom_bg {
+    /*
+    background-color: #E3AFB0;
+    z-index: -10;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 19%;
+*/
+    position: absolute;
+    bottom: -32%;
+    left: -10%;
+    width: 120%;
+    height: 65%;
+    background-image: url(../img/sand_horizontal.svg);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    transform-origin: center bottom;
+    z-index: -5;
+    opacity: 0.8;
+}
+
+.sand_3 {
+    position: absolute;
+    bottom: -32%;
+    left: -10%;
+    width: 120%;
+    height: 65%;
+    background-image: url(../img/sand_horizontal.svg);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    transform-origin: center bottom;
+    z-index: -5;
+    animation: woosh_3 3s ease-in-out infinite alternate;
+}
+
+@keyframes woosh_3 {
+    0% {
+        transform: translateX(0.5%);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateX(-0.5%);
+        opacity: 0.5;
+    }
+}
+
+.sand_4 {
+    position: absolute;
+    bottom: -31.5%;
+    left: -10%;
+    width: 120%;
+    height: 65%;
+    background-image: url(../img/sand_horizontal.svg);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    transform-origin: center bottom;
+    z-index: -5;
+    animation: woosh_4 3s ease-in-out infinite alternate;
+}
+
+@keyframes woosh_4 {
+    0% {
+        transform: translateX(0.5%);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateX(-0.5%);
+        opacity: 0.5;
+    }
+}
+
+/*ghost dialogue*/
+@keyframes ghost_dialogue {
+    0% {
+        transform: translateY(2%);
+        opacity: 0.95;
+    }
+
+    50% {
+        transform: translateY(2%);
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(2%);
+        opacity: 0.95;
+    }
+}
+
+.her_dialogue {
+    animation: ghost_dialogue 3s ease-in-out infinite alternate;
+    font-style: italic;
+}
+
+.her_dialogue p {
+    animation: weird_dialogue 3s ease-in-out infinite alternate;
+}
+
+@keyframes weird_dialogue {
+    0% {
+        transform: skewX(-10deg);
+    }
+
+    50% {
+        transform: skewX(4deg);
+        letter-spacing: 1px;
+    }
+
+    100% {
+        transform: skewX(-10deg);
+    }
+}
+
+.plains_bg {
+    background-color: #C8C8C8;
+}
+
+.girl {
+    background-image: url(../img/spirit_large.png);
+    background-position: 0px 0px;
+    background-size: 100%;
+    width: 800px;
+    height: 960px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: -2%;
+    right: 10%;
+    opacity: 0.8;
+    transition: 0.3s;
+    z-index: 5;
+    animation: ethereal_girl 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes ethereal_girl {
+    0% {
+        opacity: 0.7;
+        transform: translateY(0px);
+    }
+
+    50% {
+        opacity: 0.6;
+    }
+
+    70% {
+        opacity: 0.55;
+        transform: translateY(20px);
+    }
+
+    100% {
+        opacity: 0.7;
+        transform: translateY(-5px);
+    }
+}
+
+/*last scene with the ghost*/
+.pissed_girl {
+    position: absolute;
+    bottom: 0%;
+    right: 10%;
+    width: 800px;
+    height: 960px;
+    background-image: url(../img/spirit_large_spitesheet.png);
+    background-position: 0px 0px;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    z-index: 5;
+    opacity: 0.7;
+    animation: ethereal_girl_pissed 3.5s steps(11) 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes ethereal_girl_pissed {
+    from {
+        background-image: url(../img/spirit_large_spitesheet.png);
+        background-position: 0px 0px;
+        opacity: 0.7;
+    }
+
+    to {
+        background-position: 0px 0px;
+    }
+
+    to {
+        background-position: 0px -1920px;
+    }
+
+    to {
+        background-position: 0px -2880px;
+    }
+
+    to {
+        background-position: 0px -3840px;
+    }
+
+    to {
+        background-position: 0px -4800px;
+        opacity: 0.6;
+    }
+
+    to {
+        background-position: 0px -5760px;
+    }
+
+    to {
+        background-position: 0px -6720px;
+        opacity: 0.55;
+    }
+
+    to {
+        background-position: 0px -7680px;
+    }
+
+    to {
+        background-position: 0px -8640px;
+    }
+
+    to {
+        background-position: 0px -9600px;
+        opacity: 0.7;
+    }
+
+    to {
+        background-position: 0px -10560px;
+    }
+}
+
+@keyframes appear {
+    from {
+        /*        opacity: 0;*/
+        visibility: hidden;
+        opacity: 0;
+        display: none;
+    }
+
+    to {
+        /*        opacity: 0.8;*/
+        visibility: visible;
+        opacity: 1;
+        display: block;
+    }
+}
+
+.appear_dialogue {
+    animation: appear 1s ease-in 9s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    opacity: 0;
+    display: none;
+    /*    visibility: hidden;*/
+}
+
+@keyframes disappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.disappear_dialogue {
+    animation: disappear 1s ease-in 2.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+/*final ending*/
+
+.end {
+    background-image: url(../img/ferryman/ferryman_lantern.gif);
+    width: 300px;
+    margin-left: -150px;
+    height: 378px;
+    margin-top: -189px;
+    position: absolute;
+    left: 50%;
+    top: 35%;
+    animation: appear 1.5s ease-in 0.5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    opacity: 0;
+}
+
+.end_button {
+    color: white;
+    z-index: 10;
+    font-size: 1.5em;
+    text-align: center;
+    border: 4px white dotted;
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 65%;
+    animation: dots_ebb 2.5s ease-in-out infinite alternate;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.end_button:hover {
+    box-shadow: 0px 0px 20px white;
+}
+
+.end_text {
+    color: white;
+    z-index: 10;
+    font-size: 3em;
+    text-align: center;
+    position: absolute;
+    width: 30%;
+    left: 35%;
+    top: 56%;
+    border-radius: 15px;
+    transition: 0.5s;
+}
+
+.pink_bg {
+    background-color: #E3145E;
+}
+
+/*end_door*/
+.grass_bottom_bg {
+    /*
+    background-color: #E3AFB0;
+    z-index: -10;
+    position: absolute;
+    bottom: 0%;
+    left: 0%;
+    right: 0%;
+    width: 100%;
+    height: 19%;
+*/
+    position: absolute;
+    bottom: -32%;
+    left: -10%;
+    width: 120%;
+    height: 65%;
+    background-image: url(../img/grass_horizontal.svg);
+    background-position: 0 top;
+    background-repeat: repeat-x;
+    transform-origin: center bottom;
+    z-index: -5;
+    opacity: 0.8;
+}
+
+.door_end {
+    background-image: url(../img/door1_blue.svg);
+    background-position: 0px 0px;
+    background-size: 100%;
+    width: 250px;
+    height: 345px;
+    background-repeat: no-repeat;
+    position: absolute;
+    bottom: 8%;
+    right: 15%;
+    opacity: 1;
+    transition: 0.3s;
+    z-index: 5;
+    animation: door_end_open steps(1) 2s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+@keyframes door_end_open {
+    from {
+        background-image: url(../img/door1_blue.svg);
+    }
+
+    to {
+        background-image: url(../img/door2_blue.svg);
+    }
+}
+
+.ferryman_door {
+    position: absolute;
+    bottom: 13%;
+    right: 19%;
+    width: 100px;
+    height: 126px;
+    background-image: url(../img/ferryman/ferryman_lantern.gif);
+    background-size: 100px 126px;
+    background-repeat: no-repeat;
+    z-index: 3;
+    animation: shake_it_off 2.5s ease 3.5s 1 normal backwards;
+}
+
+@keyframes shake_it_off {
+    0% {
+        background-image: url(../img/ferryman/ferryman_rain_walk_1.png);
+        transform: translate(0px 0px);
+    }
+
+    30% {
+        background-image: url(../img/ferryman/ferryman_rain_lantern_1.png);
+        transform: translate(2px 1px);
+    }
+
+    40% {
+        background-image: url(../img/ferryman/ferryman_rain_lantern_2.png);
+        transform: translate(0px 0px);
+    }
+
+    50% {
+        background-image: url(../img/ferryman/ferryman_rain_lantern_3.png);
+    }
+
+    70% {
+        background-image: url(../img/ferryman/ferryman_lantern.gif);
+    }
+}
+
+.end_lantern {
+    background-image: url(../img/cursor_lantern.svg);
+    width: 950px;
+    height: 950px;
+    background-repeat: no-repeat;
+    z-index: 3;
+    position: absolute;
+    left: -2%;
+    bottom: -12%;
+    animation: lantern_shake 8s ease-in-out infinite alternate;
+}
+
+@keyframes lantern_shake {
+    0% {
+        transform: rotate(10deg);
+    }
+
+    25% {
+        transform: rotate(-10deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(10deg);
+    }
+}
+
+
+.tip {
+    animation: tip_disappear 2s ease-in 6s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    width: 50%;
+    font-size: 4em;
+    text-align: center;
+    text-shadow: 0px 0px 15px #26099F;
+    z-index: 20;
+    opacity: 1;
+}
+
+.tip_small {
+    animation: tip_disappear 2s ease-in 5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    width: 60%;
+    font-size: 2.5em;
+    text-align: center;
+    text-shadow: 0px 0px 15px #26099F;
+    z-index: 20;
+    opacity: 1;
+}
+
+@keyframes tip_disappear {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+.quest {
+    position: absolute;
+    top: 250px;
+    right: 1%;
+    width: 213px;
+    height: auto;
+    overflow-y: auto;
+    z-index: 20;
+    text-align: left;
+    border-radius: 10px;
+    background-color: #26099f99;
+    box-shadow: 0px 0px 20px #26099F;
+    box-sizing: border-box;
+    padding: 20px;
+    line-height: normal;
+    animation: tip_appear 1.5s ease-in 6s;
+    animation-fill-mode: both;
+}
+
+.quest h2 {
+    font-size: 14px;
+    text-align: left;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+}
+
+.quest h1 {
+    text-align: center;
+}
+
+.quest p {
+    font-size: 14px;
+    text-align: left;
+}
+
+.quest_dialogue {
+    letter-spacing: 1px;
+/*    background-color:  #26099f60;*/
+    font-style: italic;
+    line-height: 18px;
+    border-left: white solid;
+    padding-left: 20px;
+}
+
+
+@keyframes tip_appear {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.key_controls_sketch {
+    background-image: url(../img/keys.svg);
+    background-position: 0px 0px;
+    background-size: 100%;
+    width: 213px;
+    height: 156px;
+    background-repeat: no-repeat;
+    animation: key_press 2s steps(2) infinite;
+    position: absolute;
+    top: 2%;
+    right: 1%;
+    z-index: 19;
+/*    box-sizing: border-box;*/
+    border: 2.5px dotted white;
+    border-radius: 10px;
+    background-color: #26099f60;
+    box-shadow: 0px 0px 100px #26099F;
+}
